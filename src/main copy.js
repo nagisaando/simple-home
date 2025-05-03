@@ -41,7 +41,7 @@ glftLoader.load(
   (gltf) => {
     gltf.scene.scale.set(0.4, 0.4, 0.4)
     gltf.scene.position.set(0, -0.8, 0)
-    gltf.scene.rotation.y = - Math.PI / 4
+    // gltf.scene.rotation.y = - Math.PI / 4
     scene.add(gltf.scene)
     updateAllMaterials()
   }
@@ -73,9 +73,8 @@ directionalLight.position.set(5, 5, 5);
 // "normalBias": usually helps for rounded surface (make the hamburger/object bigger or smaller)
 
 directionalLight.shadow.normalBias = 0.027
-directionalLight.shadow.bias = 0.007
-gui.add(directionalLight.shadow, 'normalBias').min(-0.10).max(0.05).step(0.0001)
-gui.add(directionalLight.shadow, 'bias').min(-0.10).max(0.05).step(0.0001)
+directionalLight.shadow.bias = - 0.04
+
 
 scene.add(directionalLight)
 
