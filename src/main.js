@@ -39,6 +39,7 @@ glftLoader.setDRACOLoader(dracoLoader)
 glftLoader.load(
   '/home.glb',
   (gltf) => {
+    console.log(gltf)
     gltf.scene.scale.set(0.4, 0.4, 0.4)
     gltf.scene.position.set(0, -0.8, 0)
     gltf.scene.rotation.y = - Math.PI / 4
@@ -73,8 +74,8 @@ directionalLight.position.set(5, 5, 5);
 // "normalBias": usually helps for rounded surface (make the hamburger/object bigger or smaller)
 
 directionalLight.shadow.normalBias = 0.027
-directionalLight.shadow.bias = 0.007
-gui.add(directionalLight.shadow, 'normalBias').min(-0.10).max(0.05).step(0.0001)
+directionalLight.shadow.bias = - 0.04
+gui.add(directionalLight.shadow, 'normalBias').min(-0.10).max(0.05).step(0.001)
 gui.add(directionalLight.shadow, 'bias').min(-0.10).max(0.05).step(0.0001)
 
 scene.add(directionalLight)
@@ -142,9 +143,6 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 //   new THREE.BoxGeometry(1, 1, 1),
 //   new THREE.MeshBasicMaterial({ color: 0xECA400, })
 // )
-
-
-
 // scene.add(cube1)
 
 
